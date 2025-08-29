@@ -1,0 +1,95 @@
+/* -----------------------------------------
+   Custom CSS for Material for MkDocs
+   -----------------------------------------
+   Purpose: Improve readability and visual hierarchy
+   Applies: Bold titles, improved spacing and sizing
+------------------------------------------ */
+
+/* Headings: make them bolder and cleaner */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important;      /* Bold */
+  letter-spacing: -0.02em;          /* Subtle tightening for sharp look */
+  color: var(--md-typeset-heading-color, #212121);  /* Keep consistent with theme */
+}
+
+/* Set text color for light and dark mode */
+[data-md-color-scheme="default"] {
+  --md-text-color: #212121;
+}
+[data-md-color-scheme="slate"] {
+  --md-text-color: #e0e0e0;
+  --md-typeset-heading-color: #e0e0e0;
+}
+.md-typeset {
+  color: var(--md-text-color);
+}
+[data-md-color-scheme="slate"] .md-typeset,
+[data-md-color-scheme="slate"] p,
+[data-md-color-scheme="slate"] span,
+[data-md-color-scheme="slate"] div,
+[data-md-color-scheme="slate"] section,
+[data-md-color-scheme="slate"] article,
+[data-md-color-scheme="slate"] li {
+  color: #e0e0e0 !important;
+}
+
+/* Optional: increase size of headings slightly */
+h1 {
+  font-size: 2.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+h4, h5, h6 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Body text: improve readability */
+.md-typeset {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Code blocks: optional readability tweaks */
+code, pre {
+  font-size: 0.85rem;
+  font-family: "Fira Code", "Courier New", monospace;
+}
+
+/* Lists: space out list items a little */
+ul li, ol li {
+  margin-bottom: 0.4em;
+}
+
+/* Admonitions: make them slightly more compact */
+.md-typeset .admonition {
+  padding: 0.8rem 1rem;
+}
+
+/* Tables: improve spacing */
+.md-typeset table td, .md-typeset table th {
+  padding: 0.6em 1em;
+}
+
+/* Optional: tighten page content */
+/* Force main content to use full screen width */
+.md-main__inner {
+  max-width: 100vw !important;
+  width: 100vw !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
