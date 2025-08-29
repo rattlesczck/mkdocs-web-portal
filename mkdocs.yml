@@ -18,7 +18,7 @@ theme:
     - search.suggest
     - search.highlight
     - header.autohide
-      - toc.toggle  # Added TOC toggle feature
+      - toc.toggle  
   extra_javascript:
     - assets/scripts/toc-toggle.js
   palette:
