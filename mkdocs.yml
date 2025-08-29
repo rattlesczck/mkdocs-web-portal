@@ -1,55 +1,88 @@
-site_name: Maersk PIPE Dashboard
-site_url: https://sitename.example
+site_name: DevOps Team Portal
+site_description: Internal documentation for secure access, deployments, and monitoring
+site_author: Your Team Name
+site_url: https://yourcompany.github.io/devops-portal/
+
 theme:
-  name: material 
-  font: 
-    text: Merriweather Sans
-    code: Red Hat Mono
-  logo: assets/Maersk_Logo.png
-  favicon: assets/android-icon-36x36.png
+  name: material
+  language: en
+  logo: assets/images/logo.png         # Optional: logo for branding
+  favicon: assets/images/favicon.ico   # Optional: company favicon
   features:
-    - navigation.footer
-  palette: 
-  #  Dark mode
-    - scheme: slate
-      toggle: 
-        icon: material/weather-sunny
-        name: light mode
-      primary: light blue
-      accent: deep purple
-    
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - content.action.edit
+    - search.suggest
+    - search.highlight
+    - header.autohide
+      - toc.toggle  # Added TOC toggle feature
+  extra_javascript:
+    - assets/scripts/toc-toggle.js
+  palette:
     - scheme: default
+      primary: blue
+      accent: blue
       toggle:
         icon: material/weather-night
-        name: Light mode
+        name: Switch to dark mode
+    - scheme: slate
       primary: blue
-      accent: amber
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: Fira Code
+  icon:
+    logo: material/cloud-outline  # Replace with your preferred icon
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Quick Start: quickstart.md
+    - FAQ: faq.md
+    - Contact: contact.md
+  - DevOps Portal:
+    - SCM Access & Monitoring Guide: devops/scm-access-monitoring-guide.md
+    # - CI/CD Standards: devops/cicd-standards.md
+    # - Terraform Guidelines: devops/terraform.md
 
 markdown_extensions:
   - admonition
-  - pymdownx.details
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets 
-  - pymdownx.superfences:
-      custom_fences:
-      - name: mermaid
-        class: mermaid
-        format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  
+  - pymdownx.keys
 
-    #scheme: slate
-    # primary: green 
-    # accent: deep purple
+plugins:
+  - search
+  # - git-revision-date-localized  # Shows "Last updated" info
+  # - minify                        # Reduces final site size
+  # - awesome-pages                 # Auto nav from folder structure
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Maersk-Global/scm-central-gitops
+    - icon: fontawesome/brands/slack
+      link: https://slack.com/your-team
+  generator: false  # Hides "Powered by MkDocs" in footer
 
- 
+extra_css:
+  - assets/styles/custom.css        # Optional: internal branding
+
+extra_javascript:
+  - assets/scripts/custom.js        # Optional: behavior or interactivity
